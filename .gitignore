@@ -1,0 +1,52 @@
+# Java
+*.class
+*.jar
+*.war
+*.nar
+*.zip
+*.tar.gz
+*.rar
+target/
+.classpath
+.project
+.settings/
+.DS_Store
+
+# Maven
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+*.swp
+*.swo
+*~
+.env
+.env.local
+
+# Frontend
+node_modules/
+package-lock.json
+yarn.lock
+.cache/
+dist/
+build/
+
+# Database
+*.sql
+!database/schema.sql
+*.db
+
+# OS
+.DS_Store
+Thumbs.db
