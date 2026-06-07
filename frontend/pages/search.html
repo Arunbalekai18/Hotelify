@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotelify - Search Results</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/search.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Hotelify</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="search.html">Search Hotels</a></li>
+                <li><a href="bookings.html" class="auth-link">My Bookings</a></li>
+                <li><a href="profile.html" class="auth-link">Profile</a></li>
+                <li><a id="logoutBtn" href="#" class="auth-link" style="display:none;">Logout</a></li>
+                <li><a href="login.html" class="auth-link" id="loginLink">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="search-container">
+        <div class="container">
+            <!-- Search Filter Sidebar -->
+            <aside class="filters-sidebar">
+                <h3>Filters</h3>
+                
+                <div class="filter-group">
+                    <h4>Check-in & Check-out</h4>
+                    <input type="date" id="filterCheckIn" class="filter-input">
+                    <input type="date" id="filterCheckOut" class="filter-input">
+                </div>
+
+                <div class="filter-group">
+                    <h4>Price Range</h4>
+                    <input type="range" id="priceRange" min="0" max="500" value="500" class="filter-input">
+                    <span>$0 - $<span id="priceValue">500</span></span>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Star Rating</h4>
+                    <label><input type="checkbox" value="5"> ★★★★★ 5 Star</label>
+                    <label><input type="checkbox" value="4"> ★★★★ 4 Star</label>
+                    <label><input type="checkbox" value="3"> ★★★ 3 Star</label>
+                    <label><input type="checkbox" value="2"> ★★ 2 Star</label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Room Type</h4>
+                    <label><input type="checkbox" value="SINGLE"> Single</label>
+                    <label><input type="checkbox" value="DOUBLE"> Double</label>
+                    <label><input type="checkbox" value="SUITE"> Suite</label>
+                    <label><input type="checkbox" value="PENTHOUSE"> Penthouse</label>
+                </div>
+
+                <button class="btn btn-primary btn-block" id="applyFilters">Apply Filters</button>
+                <button class="btn btn-secondary btn-block" id="resetFilters">Reset</button>
+            </aside>
+
+            <!-- Search Results -->
+            <main class="search-results">
+                <div class="results-header">
+                    <h2>Search Results</h2>
+                    <div class="sort-options">
+                        <select id="sortBy">
+                            <option value="relevance">Sort by: Relevance</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Highest Rated</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="hotelsList" class="hotels-list">
+                    <!-- Hotels will be loaded here -->
+                </div>
+
+                <div id="noResults" class="no-results" style="display:none;">
+                    <p>No hotels found matching your criteria.</p>
+                    <a href="../index.html" class="btn btn-primary">Back to Home</a>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Hotelify. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/search.js"></script>
+</body>
+</html>

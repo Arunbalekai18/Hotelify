@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotelify - Hotel Details</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/hotel-details.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Hotelify</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="search.html">Search Hotels</a></li>
+                <li><a href="bookings.html" class="auth-link">My Bookings</a></li>
+                <li><a href="profile.html" class="auth-link">Profile</a></li>
+                <li><a id="logoutBtn" href="#" class="auth-link" style="display:none;">Logout</a></li>
+                <li><a href="login.html" class="auth-link" id="loginLink">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="hotel-details-container">
+        <div class="container">
+            <!-- Hotel Header -->
+            <div id="hotelHeader" class="hotel-header">
+                <img id="hotelImage" src="" alt="Hotel" class="hotel-image">
+                <div class="hotel-info">
+                    <h1 id="hotelName"></h1>
+                    <div class="rating-location">
+                        <span id="rating" class="rating"></span>
+                        <span id="location" class="location"></span>
+                    </div>
+                    <p id="hotelDescription" class="description"></p>
+                </div>
+            </div>
+
+            <!-- Amenities -->
+            <section class="amenities-section">
+                <h3>Amenities</h3>
+                <div id="amenitiesList" class="amenities-list"></div>
+            </section>
+
+            <!-- Rooms Section -->
+            <section class="rooms-section">
+                <h3>Available Rooms</h3>
+                <div id="roomsList" class="rooms-grid"></div>
+            </section>
+
+            <!-- Reviews Section -->
+            <section class="reviews-section">
+                <h3>Guest Reviews</h3>
+                <div id="reviewsList" class="reviews-list"></div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Room Modal -->
+    <div id="roomModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Book Room</h2>
+            <form id="bookingForm" class="booking-form">
+                <div class="form-group">
+                    <label>Room Type</label>
+                    <input type="text" id="roomType" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Price per Night</label>
+                    <input type="text" id="roomPrice" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Check-in Date</label>
+                    <input type="date" id="checkInDate" required>
+                </div>
+                <div class="form-group">
+                    <label>Check-out Date</label>
+                    <input type="date" id="checkOutDate" required>
+                </div>
+                <div class="form-group">
+                    <label>Number of Guests</label>
+                    <input type="number" id="guests" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label>Special Requests</label>
+                    <textarea id="requests" placeholder="Any special requests?"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Proceed to Payment</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Hotelify. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/hotel-details.js"></script>
+</body>
+</html>
